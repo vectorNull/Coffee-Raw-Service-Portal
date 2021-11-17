@@ -8,16 +8,16 @@ public with sharing class LeadTriggerHelper {
             }
         }
 
-        List<Lead> existingLeads = [SELECT Id, Email FROM Lead WHERE Email in :newEmails];
+        List<Lead> existingLeads = [SELECT Id, Email FROM Lead WHERE Email IN :newEmails];
 
-        Set<String> existingLeads = new Set<String>();
+        Set<String> existingEmails = new Set<String>();
         for(Lead l : existingLeads) {
-            existingLeads.add(l.Email)
+            existingLeads.add(l.Email);
         }
 
         for(Lead l : newLeads) {
             if (existingLeads.contains(l.Email)) {
-                c.Email.addError('Cannot create lead because the email provide is already associated with an exisitng lead');
+                l.Email.addError('Cannot create lead because the email provide is already associated with an exisitng lead');
             }
         }
     }
