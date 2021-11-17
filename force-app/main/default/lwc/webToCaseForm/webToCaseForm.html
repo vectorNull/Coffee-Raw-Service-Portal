@@ -1,0 +1,37 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <div class="sldx-box">
+    <h1>Can't find an answer to your question? Fill out this form and we'll get in contact with you.</h1><br>
+    <div class="slds-form-element">
+        <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+    
+            <!-- sldsValidatorIgnoreNextLine -->
+            <!-- sldsValidatorIgnoreNextLine -->
+            <input type=hidden name="orgid" value="00D5f000005wXri">
+            <input type=hidden name="retURL" value="https://coffeeraw-developer-edition.na163.force.com/supportsite/s/">
+        
+            
+            <label class="slds-form-element__label" for="name">Name</label>
+            <input class="slds-input" id="name" maxlength="80" name="name" size="20" type="text" /><br>
+            
+            <label class="slds-form-element__label" for="email">Email</label>
+            <input  class="slds-input" id="email" maxlength="80" name="email" size="20" type="text" /><br>
+            
+            <label class="slds-form-element__label" for="phone">Phone</label>
+            <input  class="slds-input" id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+            
+            <label class="slds-form-element__label" for="subject">Subject</label>
+            <input class="slds-input" id="subject" maxlength="80" name="subject" size="20" type="text" /><br>
+            
+            <label class="slds-form-element__label" for="description">Description</label>
+            <textarea class="slds-input" name="description"></textarea><br>
+            
+            <input type="hidden"  id="external" name="external" value="1" /><br>
+            
+            <input class="slds-button slds-button_brand" type="submit" name="submit" style="position: center">
+        
+        </form>
+   
+    </div>
+</div>
+</template>
