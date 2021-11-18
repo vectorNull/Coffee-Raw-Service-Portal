@@ -12,11 +12,11 @@ public with sharing class LeadTriggerHelper {
 
         Set<String> existingEmails = new Set<String>();
         for(Lead l : existingLeads) {
-            existingLeads.add(l.Email);
+            existingEmails.add(l.Email);
         }
 
         for(Lead l : newLeads) {
-            if (existingLeads.contains(l.Email)) {
+            if (existingEmails.contains(l.Email)) {
                 l.Email.addError('Cannot create lead because the email provide is already associated with an exisitng lead');
             }
         }
